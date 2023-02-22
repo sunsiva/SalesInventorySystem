@@ -12,6 +12,15 @@ Public Class frmProduct
     Dim dt As New DataTable
     Dim cs As String = "server=DESKTOP-G8EVIRI; Database=SIM;uid=sa;pwd=Myla;"
 
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
     Sub clear()
         txtPrice.Text = ""
         txtProductCode.Text = ""
@@ -133,7 +142,7 @@ Public Class frmProduct
                 con = New SqlConnection(cs)
                 con.Open()
 
-                Dim cb As String = "insert into Product(productcode,productname,category,weight,price) VALUES (@d1,@d2,@d3,@d4,@d5)"
+                Dim cb As String = "insert into Product(productcode,productname,category,weight,price,BPrice, MRP,CreatedOn) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)"
 
                 cmd = New SqlCommand(cb)
 
@@ -148,8 +157,9 @@ Public Class frmProduct
                 cmd.Parameters.Add(New SqlParameter("@d4", System.Data.SqlDbType.NChar, 10, "weight"))
 
                 cmd.Parameters.Add(New SqlParameter("@d5", System.Data.SqlDbType.Float, 10, "price"))
-
-
+                cmd.Parameters.Add(New SqlParameter("@d6", System.Data.SqlDbType.Float, 10, "bprice"))
+                cmd.Parameters.Add(New SqlParameter("@d7", System.Data.SqlDbType.Float, 10, "MRP"))
+                cmd.Parameters.Add(New SqlParameter("@d8", System.Data.SqlDbType.DateTime, 15, "CreatedOn"))
 
                 cmd.Parameters("@d1").Value = txtProductCode.Text
                 cmd.Parameters("@d2").Value = txtProductName.Text
@@ -160,7 +170,9 @@ Public Class frmProduct
                 cmd.Parameters("@d4").Value = cmbWeight.Text
 
                 cmd.Parameters("@d5").Value = CDbl(txtPrice.Text)
-
+                cmd.Parameters("@d6").Value = CDbl(txtBPrice.Text)
+                cmd.Parameters("@d7").Value = CDbl(txtMRP.Text)
+                cmd.Parameters("@d8").Value = DateTime.Now
 
                 cmd.ExecuteReader()
                 MessageBox.Show("Successfully saved", "Product Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -175,7 +187,7 @@ Public Class frmProduct
                 con.Close()
             End If
 
-
+            getProducts()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -228,8 +240,8 @@ Public Class frmProduct
             End If
 
             con.Close()
-        
 
+            getProducts()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -448,6 +460,30 @@ Public Class frmProduct
         fillCategory()
         fillWeight()
         autocomplete()
+        getProducts()
+    End Sub
+
+    Private Sub getProducts()
+        Try
+
+            con = New SqlConnection(cs)
+
+            con.Open()
+            cmd = New SqlCommand("SELECT rtrim(ProductCode)[Product Code],rtrim(ProductName)[Product Name],rtrim(Category)[Category],rtrim(Weight)[Kg/Qty/Inch],rtrim(Price)[S.Price],rtrim(BPrice)[B.Price],rtrim(MRP)[MRP] from Product order by ProductName", con)
+
+            Dim myDA As SqlDataAdapter = New SqlDataAdapter(cmd)
+
+            Dim myDataSet As DataSet = New DataSet()
+
+            myDA.Fill(myDataSet, "Product")
+
+            DataGridView1.DataSource = myDataSet.Tables("Product").DefaultView
+
+
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -486,5 +522,9 @@ Public Class frmProduct
             'Reject all other characters.
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Hide()
     End Sub
 End Class

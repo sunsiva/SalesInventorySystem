@@ -103,17 +103,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SalesInventorySystem.exe" size="4155864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SalesInventorySystem.exe" size="4169688">
       <assemblyIdentity name="SalesInventorySystem" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>x0qJ4smdqIklpYte9iyiuZTEt3Qp9l/oakGs1XOJUYo=</dsig:DigestValue>
+        <dsig:DigestValue>zzpeuR8S+OKH2ZiwzQ/ZD5SODr5iEv9XvlvH+im78Bs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name=".gitignore" size="343">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0XqvH6b7p4INB1lpX30EUvkdr5KsOhztUza33xcmgQU=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="inventory-maintenance-icon.ico" size="16958">
     <hash>
       <dsig:Transforms>

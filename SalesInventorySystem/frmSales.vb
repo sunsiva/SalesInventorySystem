@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Security.Cryptography
 Imports System.Text
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
 
 Public Class frmSales
     Dim rdr As SqlDataReader = Nothing
@@ -424,13 +425,14 @@ Public Class frmSales
     Private Sub txtQty_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCartons.TextChanged
 
         Try
-            If Val(txtAvailableCartons.Text) = 0 Then
-                txtPackets.Text = 0
-                txtTotalAmount.Text = 0
-                Exit Sub
-            End If
-            txtPackets.Text = CInt(Val(txtCartons.Text) * (Val(txtPacketsPerCarton.Text) / Val(txtAvailableCartons.Text)))
-            txtTotalAmount.Text = CInt(Val(txtPackets.Text) * Val(txtPrice.Text))
+            'If Val(txtAvailableCartons.Text) = 0 Then
+            '    txtPackets.Text = 0
+            '    txtTotalAmount.Text = 0
+            '    Exit Sub
+            'End If
+            'txtPackets.Text = CInt(Val(txtCartons.Text) * (Val(txtPacketsPerCarton.Text) / Val(txtAvailableCartons.Text)))
+            txtTotalAmount.Text = CInt(Val(txtAvailableCartons.Text) * Val(txtPrice.Text))
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -801,5 +803,30 @@ Public Class frmSales
         frmOrders.Show()
     End Sub
 
-    
+    Private Sub cmbProductName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbProductName.SelectedIndexChanged
+        Try
+            con = New SqlConnection(cs)
+            con.Open()
+            cmd = New SqlCommand("SELECT rtrim(Product.ProductCode)[Product Code],rtrim(Product.ProductName)[Product Name],rtrim(Product.category)[Category],rtrim(Product.Weight)[Weight],rtrim(Price)[Unit Price],sum(Cartons)[Cartons],sum(TotalPackets)[Packets] from product,Stock  where product.productcode=stock.productcode and Product.ProductName LIKE '%" & cmbProductName.Text & "%' group by Product.ProductCode,Product.Productname,Product.Weight,Product.Category,Product.Price order by Product.ProductName", con)
+            Dim myDA As SqlDataAdapter = New SqlDataAdapter(cmd)
+            Dim myDataSet As DataSet = New DataSet()
+            myDA.Fill(myDataSet, "Product")
+            myDA.Fill(myDataSet, "Stock")
+            cmbProductName.DataSource = myDataSet.Tables("Product").DefaultView
+
+            'DataGridView1.DataSource = myDataSet.Tables("Stock").DefaultView
+            'Dim sum As Int64 = 0
+            'Dim sum1 As Int64 = 0
+            'For Each r As DataGridViewRow In Me.DataGridView1.Rows
+            '    sum = sum + r.Cells(5).Value
+            '    sum1 = sum1 + r.Cells(6).Value
+            'Next
+            'txtC1.Text = sum
+            'txtP1.Text = sum1
+
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

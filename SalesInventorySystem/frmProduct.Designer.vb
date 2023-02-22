@@ -40,12 +40,23 @@ Partial Class frmProduct
         Me.Save = New System.Windows.Forms.Button()
         Me.NewRecord = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtBPrice = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtMRP = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtMRP)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtBPrice)
+        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtPrice)
         Me.GroupBox1.Controls.Add(Me.cmbWeight)
         Me.GroupBox1.Controls.Add(Me.Button2)
@@ -60,7 +71,7 @@ Partial Class frmProduct
         Me.GroupBox1.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(35, 23)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(544, 218)
+        Me.GroupBox1.Size = New System.Drawing.Size(578, 218)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Product Details"
@@ -87,7 +98,7 @@ Partial Class frmProduct
         Me.Button2.Location = New System.Drawing.Point(341, 30)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(29, 25)
-        Me.Button2.TabIndex = 5
+        Me.Button2.TabIndex = 11
         Me.Button2.Text = "<"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -96,17 +107,17 @@ Partial Class frmProduct
         Me.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbCategory.FormattingEnabled = True
-        Me.cmbCategory.Location = New System.Drawing.Point(143, 99)
+        Me.cmbCategory.Location = New System.Drawing.Point(143, 63)
         Me.cmbCategory.Name = "cmbCategory"
         Me.cmbCategory.Size = New System.Drawing.Size(302, 25)
-        Me.cmbCategory.TabIndex = 1
+        Me.cmbCategory.TabIndex = 0
         '
         'txtProductName
         '
-        Me.txtProductName.Location = New System.Drawing.Point(143, 65)
+        Me.txtProductName.Location = New System.Drawing.Point(143, 101)
         Me.txtProductName.Name = "txtProductName"
-        Me.txtProductName.Size = New System.Drawing.Size(376, 24)
-        Me.txtProductName.TabIndex = 0
+        Me.txtProductName.Size = New System.Drawing.Size(302, 24)
+        Me.txtProductName.TabIndex = 1
         '
         'txtProductCode
         '
@@ -114,12 +125,12 @@ Partial Class frmProduct
         Me.txtProductCode.Name = "txtProductCode"
         Me.txtProductCode.ReadOnly = True
         Me.txtProductCode.Size = New System.Drawing.Size(189, 24)
-        Me.txtProductCode.TabIndex = 4
+        Me.txtProductCode.TabIndex = 10
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 99)
+        Me.Label4.Location = New System.Drawing.Point(28, 63)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(59, 17)
         Me.Label4.TabIndex = 11
@@ -130,23 +141,23 @@ Partial Class frmProduct
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(28, 176)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(61, 17)
+        Me.Label8.Size = New System.Drawing.Size(74, 17)
         Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Unit Price"
+        Me.Label8.Text = "Selling Price"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(28, 137)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 17)
+        Me.Label3.Size = New System.Drawing.Size(77, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Weight (Per Qty)"
+        Me.Label3.Text = "Kg/Qty/Inch"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 65)
+        Me.Label2.Location = New System.Drawing.Point(28, 101)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(87, 17)
         Me.Label2.TabIndex = 1
@@ -165,7 +176,7 @@ Partial Class frmProduct
         '
         Me.Delete.Enabled = False
         Me.Delete.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Delete.Location = New System.Drawing.Point(11, 121)
+        Me.Delete.Location = New System.Drawing.Point(11, 124)
         Me.Delete.Name = "Delete"
         Me.Delete.Size = New System.Drawing.Size(75, 29)
         Me.Delete.TabIndex = 3
@@ -189,7 +200,7 @@ Partial Class frmProduct
         Me.Save.Location = New System.Drawing.Point(11, 50)
         Me.Save.Name = "Save"
         Me.Save.Size = New System.Drawing.Size(75, 29)
-        Me.Save.TabIndex = 1
+        Me.Save.TabIndex = 6
         Me.Save.Text = "&Save"
         Me.Save.UseVisualStyleBackColor = True
         '
@@ -206,14 +217,66 @@ Partial Class frmProduct
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Controls.Add(Me.NewRecord)
         Me.Panel1.Controls.Add(Me.Delete)
         Me.Panel1.Controls.Add(Me.Save)
         Me.Panel1.Controls.Add(Me.Update_Record)
-        Me.Panel1.Location = New System.Drawing.Point(597, 32)
+        Me.Panel1.Location = New System.Drawing.Point(619, 32)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(101, 164)
+        Me.Panel1.Size = New System.Drawing.Size(101, 209)
         Me.Panel1.TabIndex = 1
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(35, 247)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(687, 323)
+        Me.DataGridView1.TabIndex = 33
+        '
+        'txtBPrice
+        '
+        Me.txtBPrice.Location = New System.Drawing.Point(316, 173)
+        Me.txtBPrice.Name = "txtBPrice"
+        Me.txtBPrice.Size = New System.Drawing.Size(91, 24)
+        Me.txtBPrice.TabIndex = 4
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(249, 176)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 17)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Buy Price"
+        '
+        'txtMRP
+        '
+        Me.txtMRP.Location = New System.Drawing.Point(481, 173)
+        Me.txtMRP.Name = "txtMRP"
+        Me.txtMRP.Size = New System.Drawing.Size(91, 24)
+        Me.txtMRP.TabIndex = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(438, 176)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(37, 17)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "MRP"
+        '
+        'btnClose
+        '
+        Me.btnClose.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(11, 163)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 29)
+        Me.btnClose.TabIndex = 4
+        Me.btnClose.Text = "&Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'frmProduct
         '
@@ -221,7 +284,8 @@ Partial Class frmProduct
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(732, 269)
+        Me.ClientSize = New System.Drawing.Size(732, 582)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -233,6 +297,7 @@ Partial Class frmProduct
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -253,4 +318,10 @@ Partial Class frmProduct
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents txtPrice As System.Windows.Forms.TextBox
     Friend WithEvents cmbWeight As System.Windows.Forms.ComboBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtMRP As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtBPrice As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btnClose As Button
 End Class

@@ -52,6 +52,16 @@ SalesInventorySystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Sales_and_Inventory_System.My.Resources.Resources.contact">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Sales_and_Inventory_System.My.Resources.Resources.debt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Sales_and_Inventory_System.My.Resources.Resources.HighAssurance">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports CrystalDecisions.Shared
+
 Public Class FrmMain
     Dim sSql As String
     Dim con As SqlConnection
@@ -51,7 +53,7 @@ Public Class FrmMain
         Me.Refresh()
         Button1.PerformClick()
         Timer2.Start()
-        Timer2.Interval = 1000
+        Timer2.Interval = 5000
 
     End Sub
 
@@ -61,12 +63,16 @@ Public Class FrmMain
     End Sub
 
     Private Sub RegistrationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegistrationToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
         frmRegistration.Show()
+        'Dim SecondFormMDI As New frmRegistration
+        'SecondFormMDI.MdiParent = Me.MdiParent
+        'SecondFormMDI.Show()
     End Sub
 
     Private Sub LoginDetailsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginDetailsToolStripMenuItem.Click
         frmLoginDetails.Show()
+
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
@@ -82,75 +88,78 @@ Public Class FrmMain
     End Sub
 
     Private Sub VendorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VendorToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
         frmVendor.Show()
     End Sub
 
     Private Sub CustomerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CustomerToolStripMenuItem.Click
-        Me.Hide()
+        ' Me.Hide()
         frmCustomer.Show()
+
     End Sub
 
     Private Sub InvoiceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InvoiceToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
         frmSales.Show()
     End Sub
 
     Private Sub ProductToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProductToolStripMenuItem.Click
-        Me.Hide()
+        ' Me.Hide()
         frmProduct.Show()
     End Sub
 
     Private Sub ProfileEntryToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProfileEntryToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
         frmCustomer.Show()
     End Sub
 
     Private Sub ProfileEntryToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProfileEntryToolStripMenuItem1.Click
-        Me.Hide()
+        'Me.Hide()
         frmVendor.Show()
     End Sub
 
     Private Sub CategoryToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CategoryToolStripMenuItem.Click
-        Me.Hide()
+        ' Me.Hide()
         frmInventoryCategory.Show()
     End Sub
 
-  
+
     Private Sub StockToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StockToolStripMenuItem1.Click
-        Me.Hide()
+        ' Me.Hide()
         frmStock.Show()
     End Sub
 
     Private Sub SalesToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SalesToolStripMenuItem1.Click
-        Me.Hide()
+        'Me.Hide()
         frmSales.Show()
     End Sub
 
-   
+
+
 
     Private Sub VendorsToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VendorsToolStripMenuItem1.Click
-        Me.Hide()
+        ' Me.Hide()
         frmVendorRecords1.Show()
     End Sub
 
     Private Sub CustomersToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CustomersToolStripMenuItem1.Click
-        Me.Hide()
+        ' Me.Hide()
         frmCustomersRecord1.Show()
     End Sub
 
 
 
     Private Sub RegistrationToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegistrationToolStripMenuItem1.Click
-        Me.Hide()
+        ' Me.Hide()
         frmRegistration.Show()
     End Sub
 
 
-    
+
+
 
     Private Sub SalesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SalesToolStripMenuItem.Click
-        Me.Hide()
+        ' Me.Hide()
         frmSalesRecord.Show()
     End Sub
 
@@ -168,7 +177,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub SalesToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SalesToolStripMenuItem2.Click
-        Me.Hide()
+        'Me.Hide()
         frmSalesReport.CrystalReportViewer1.ReportSource = Nothing
         frmSalesReport.dtpInvoiceDateFrom.Text = Today
         frmSalesReport.dtpInvoiceDateTo.Text = Today
@@ -184,7 +193,7 @@ Public Class FrmMain
    
 
     Private Sub OrderToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OrderToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
         frmOrder.Show()
     End Sub
 
@@ -196,7 +205,7 @@ Public Class FrmMain
    
 
     Private Sub OrderToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OrderToolStripMenuItem1.Click
-        Me.Hide()
+        ' Me.Hide()
         frmOrderRecord.DataGridView1.DataSource = Nothing
         frmOrderRecord.dtpOrderDateFrom.Text = Today
         frmOrderRecord.dtpOrderDateTo.Text = Today
@@ -214,7 +223,7 @@ Public Class FrmMain
    
 
     Private Sub OrderToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OrderToolStripMenuItem2.Click
-        Me.Hide()
+        'Me.Hide()
 
         frmOrdersReport.cmbCustomerName.Text = ""
         frmOrdersReport.CrystalReportViewer3.ReportSource = Nothing
@@ -277,23 +286,23 @@ Public Class FrmMain
     End Sub
 
     Private Sub ProductMasterEntryToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProductMasterEntryToolStripMenuItem.Click
-        Me.Hide()
+        ' Me.Hide()
         frmProduct.Show()
     End Sub
 
     Private Sub OrdersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OrdersToolStripMenuItem.Click
-        Me.Hide()
+        ' Me.Hide()
         frmOrder.Show()
     End Sub
 
     Private Sub StockToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StockToolStripMenuItem2.Click
-        Me.Hide()
+        'Me.Hide()
         frmStock.Show()
     End Sub
 
    
     Private Sub MasterToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MasterToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
 
         frmProductsRecord1.DataGridView4.DataSource = Nothing
         frmProductsRecord1.cmbCategory.Text = ""
@@ -307,8 +316,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub StockToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StockToolStripMenuItem.Click
-        Me.Hide()
-  
+        'Me.Hide()
+
         frmStockDetails.cmbProductName.Text = ""
         frmStockDetails.txtProduct.Text = ""
         frmStockDetails.DataGridView2.DataSource = Nothing

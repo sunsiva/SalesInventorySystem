@@ -121,6 +121,9 @@
   <data name="RegistrationIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RegistrationIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="debt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,8 +181,8 @@
   <data name="invoice_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invoice_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChangePassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChangePassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="system-information-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system-information-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="services_registration" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\services_registration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,6 +223,9 @@
   <data name="login_img1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login_img1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stock_icon_v.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stock_icon_v.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inventory_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,10 +247,10 @@
   <data name="Wordpad_icon_(Windows_7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wordpad_icon_(Windows_7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="system-information-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\system-information-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ChangePassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChangePassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stock_icon_v.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stock_icon_v.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

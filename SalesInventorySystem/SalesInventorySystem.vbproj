@@ -653,7 +653,6 @@
     <None Include="Registration_DBDataSet.xss">
       <DependentUpon>Registration_DBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SalesInventorySystem_TemporaryKey.pfx" />
     <None Include="SI_DBDataSet.xsc">
       <DependentUpon>SI_DBDataSet.xsd</DependentUpon>
     </None>
@@ -731,7 +730,10 @@
     <None Include="Resources\invoice_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="inventory-maintenance-icon.ico" />
+    <None Include="Resources\contact.png" />
+    <None Include="Resources\debt.png" />
     <None Include="Resources\stock_icon_v.3.png" />
     <None Include="Resources\stocks-icon.png" />
     <None Include="Resources\2.jpg" />

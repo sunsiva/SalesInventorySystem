@@ -146,7 +146,7 @@ Partial Class frmStock
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(269, 184)
+        Me.Label4.Location = New System.Drawing.Point(320, 189)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 17)
         Me.Label4.TabIndex = 19
@@ -205,7 +205,7 @@ Partial Class frmStock
         Me.txtProductName.Location = New System.Drawing.Point(165, 109)
         Me.txtProductName.Name = "txtProductName"
         Me.txtProductName.ReadOnly = True
-        Me.txtProductName.Size = New System.Drawing.Size(376, 24)
+        Me.txtProductName.Size = New System.Drawing.Size(331, 24)
         Me.txtProductName.TabIndex = 2
         '
         'txtProductCode
@@ -239,9 +239,9 @@ Partial Class frmStock
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(32, 184)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 17)
+        Me.Label3.Size = New System.Drawing.Size(77, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Weight (Per Qty)"
+        Me.Label3.Text = "Kg/Qty/Inch"
         '
         'Label2
         '

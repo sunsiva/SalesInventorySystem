@@ -64,6 +64,8 @@ Partial Class FrmMain
         Me.OrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DebtMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContactMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrationToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -321,10 +323,10 @@ Partial Class FrmMain
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockToolStripMenuItem2, Me.OrderToolStripMenuItem, Me.ProductToolStripMenuItem, Me.InvoiceToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.VendorToolStripMenuItem, Me.RegistrationToolStripMenuItem1, Me.LogoutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockToolStripMenuItem2, Me.OrderToolStripMenuItem, Me.ProductToolStripMenuItem, Me.InvoiceToolStripMenuItem, Me.DebtMenuItem, Me.ContactMenuItem, Me.CustomerToolStripMenuItem, Me.VendorToolStripMenuItem, Me.RegistrationToolStripMenuItem1, Me.LogoutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(821, 77)
+        Me.MenuStrip1.Size = New System.Drawing.Size(821, 79)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -334,7 +336,7 @@ Partial Class FrmMain
         Me.StockToolStripMenuItem2.Image = Global.Sales_and_Inventory_System.My.Resources.Resources.stock_icon_v_3
         Me.StockToolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.StockToolStripMenuItem2.Name = "StockToolStripMenuItem2"
-        Me.StockToolStripMenuItem2.Size = New System.Drawing.Size(62, 73)
+        Me.StockToolStripMenuItem2.Size = New System.Drawing.Size(62, 75)
         Me.StockToolStripMenuItem2.Text = "Stock"
         Me.StockToolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -344,7 +346,7 @@ Partial Class FrmMain
         Me.OrderToolStripMenuItem.Image = CType(resources.GetObject("OrderToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OrderToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.OrderToolStripMenuItem.Name = "OrderToolStripMenuItem"
-        Me.OrderToolStripMenuItem.Size = New System.Drawing.Size(65, 73)
+        Me.OrderToolStripMenuItem.Size = New System.Drawing.Size(65, 75)
         Me.OrderToolStripMenuItem.Text = "Order"
         Me.OrderToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -354,7 +356,7 @@ Partial Class FrmMain
         Me.ProductToolStripMenuItem.Image = CType(resources.GetObject("ProductToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ProductToolStripMenuItem.Name = "ProductToolStripMenuItem"
-        Me.ProductToolStripMenuItem.Size = New System.Drawing.Size(78, 73)
+        Me.ProductToolStripMenuItem.Size = New System.Drawing.Size(78, 75)
         Me.ProductToolStripMenuItem.Text = "Product"
         Me.ProductToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -364,9 +366,29 @@ Partial Class FrmMain
         Me.InvoiceToolStripMenuItem.Image = CType(resources.GetObject("InvoiceToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InvoiceToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.InvoiceToolStripMenuItem.Name = "InvoiceToolStripMenuItem"
-        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(73, 73)
-        Me.InvoiceToolStripMenuItem.Text = "Invoice"
+        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(62, 75)
+        Me.InvoiceToolStripMenuItem.Text = "Sales"
         Me.InvoiceToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'DebtMenuItem
+        '
+        Me.DebtMenuItem.Font = New System.Drawing.Font("Bookman Old Style", 11.25!)
+        Me.DebtMenuItem.Image = Global.Sales_and_Inventory_System.My.Resources.Resources.debt
+        Me.DebtMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.DebtMenuItem.Name = "DebtMenuItem"
+        Me.DebtMenuItem.Size = New System.Drawing.Size(76, 75)
+        Me.DebtMenuItem.Text = "Debt"
+        Me.DebtMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ContactMenuItem
+        '
+        Me.ContactMenuItem.Font = New System.Drawing.Font("Bookman Old Style", 11.25!)
+        Me.ContactMenuItem.Image = Global.Sales_and_Inventory_System.My.Resources.Resources.contact
+        Me.ContactMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ContactMenuItem.Name = "ContactMenuItem"
+        Me.ContactMenuItem.Size = New System.Drawing.Size(87, 75)
+        Me.ContactMenuItem.Text = "Contacts"
+        Me.ContactMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'CustomerToolStripMenuItem
         '
@@ -374,9 +396,10 @@ Partial Class FrmMain
         Me.CustomerToolStripMenuItem.Image = CType(resources.GetObject("CustomerToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
-        Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(103, 73)
+        Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(103, 75)
         Me.CustomerToolStripMenuItem.Text = "Distributor"
         Me.CustomerToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.CustomerToolStripMenuItem.Visible = False
         '
         'VendorToolStripMenuItem
         '
@@ -384,9 +407,10 @@ Partial Class FrmMain
         Me.VendorToolStripMenuItem.Image = CType(resources.GetObject("VendorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VendorToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VendorToolStripMenuItem.Name = "VendorToolStripMenuItem"
-        Me.VendorToolStripMenuItem.Size = New System.Drawing.Size(75, 73)
+        Me.VendorToolStripMenuItem.Size = New System.Drawing.Size(75, 75)
         Me.VendorToolStripMenuItem.Text = "Vendor"
         Me.VendorToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.VendorToolStripMenuItem.Visible = False
         '
         'RegistrationToolStripMenuItem1
         '
@@ -394,9 +418,10 @@ Partial Class FrmMain
         Me.RegistrationToolStripMenuItem1.Image = CType(resources.GetObject("RegistrationToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.RegistrationToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RegistrationToolStripMenuItem1.Name = "RegistrationToolStripMenuItem1"
-        Me.RegistrationToolStripMenuItem1.Size = New System.Drawing.Size(113, 73)
+        Me.RegistrationToolStripMenuItem1.Size = New System.Drawing.Size(113, 75)
         Me.RegistrationToolStripMenuItem1.Text = "Registration"
         Me.RegistrationToolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RegistrationToolStripMenuItem1.Visible = False
         '
         'LogoutToolStripMenuItem
         '
@@ -404,7 +429,7 @@ Partial Class FrmMain
         Me.LogoutToolStripMenuItem.Image = CType(resources.GetObject("LogoutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LogoutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(70, 73)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(70, 75)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         Me.LogoutToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -534,11 +559,12 @@ Partial Class FrmMain
         Me.Controls.Add(Me.MenuStrip2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.MaximizeBox = False
         Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sri Srinivasa Agencies, Mangalapuram"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip2.ResumeLayout(False)
         Me.MenuStrip2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -608,4 +634,6 @@ Partial Class FrmMain
     Friend WithEvents OrdersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MasterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DebtMenuItem As ToolStripMenuItem
+    Friend WithEvents ContactMenuItem As ToolStripMenuItem
 End Class
